@@ -1,0 +1,79 @@
+public class Order
+{
+    // instance variables - replace the example below with your own
+    private String order;
+    private String customer;
+    private int length;
+    private int width;
+    private int sizePrice;
+    private int totalPrice;
+    private String wood;
+    private int woodPrice;
+    private int drawer;
+    private int drawerPrice;
+
+    /**
+     * Constructor for objects of class Order
+     */
+    public Order(String orderNumber, String customerName, int lengthIn, 
+    int widthIn, String woodType, int drawerNumber)
+    {
+        // initialise instance variables
+        order = orderNumber;
+        customer = customerName;
+        length = lengthIn;
+        width = widthIn;
+        wood = woodType;
+        if(length * width > 750)
+        {
+           sizePrice = 50;
+        }
+        else{
+            sizePrice = 0;
+        }
+        if(wood == "mahogany"|| wood == "pine"|| wood == "oak")
+        {
+            ;
+        }
+        else{
+            System.out.println("Choose one of the following options: mahogany, oak, or pine.");
+        }
+        if(wood == "mahogany")
+        {
+            woodPrice = 150;
+        }
+        if(wood == "oak")
+        {
+            woodPrice = 125;
+        }
+        if(wood == "pine")
+        {
+            woodPrice = 0;
+        }
+        drawer = drawerNumber;
+        if(drawerNumber > 0)
+        {
+            drawerPrice = 30 * drawerNumber;
+        }
+        else{
+            drawerPrice = 0;
+        }
+        totalPrice = 200;
+    }
+    
+    
+    /**
+     * 
+     */
+    public void print()
+    {
+        totalPrice = 200 + sizePrice + woodPrice + drawerPrice;
+        System.out.println("Order number: " + order);
+        System.out.println("Customer: " + customer);
+        System.out.println("Length: " + length + " in");
+        System.out.println("Width: " + width + " in");
+        System.out.println("Wood type: " + wood);
+        System.out.println("Number of drawers: " + drawer);
+        System.out.println("Total price: $" + totalPrice);
+    }
+}
